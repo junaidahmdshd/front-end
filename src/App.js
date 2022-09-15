@@ -1,32 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import axios from "axios";
 import Home from "./Home";
 import TrackingPage from "./TrackingPage";
 
 const App = () => {
-  const trackingNumber = "BOXC09B8658ACB";
-
-  const fetchTracking = () => {
-    Promise.all([
-      axios.get(`https://dev-backend.boxcheck.com/public-apis-service/api/v1/public/trackingHistory/${trackingNumber}`),
-      axios.get(`https://dev-backend.boxcheck.com/public-apis-service/api/v1/public/currentTracking/${trackingNumber}`),
-      axios.get(`https://dev-backend.boxcheck.com/public-apis-service/api/v1/public/trackingAppConfigurations/${trackingNumber}`),
-    ])
-      .then(response => {
-        console.log("Response");
-        console.log(response);
-      })
-      .catch(error => {
-        console.log("error");
-        console.log(error);
-      })
-  };
-
-  useEffect(() => {
-    fetchTracking();
-  }, [])
-
   return (
     <div>
       <nav>
