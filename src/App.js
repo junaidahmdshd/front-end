@@ -2,7 +2,6 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import TrackingPage from "./TrackingPage";
 import Home from "./Home";
-
 const App = () => {
   return (
     <div>
